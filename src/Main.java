@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        System.out.println("DSgdsfg");
 
 
 //        WestminsterSkinConsultationManager obj1 = new WestminsterSkinConsultationManager();
