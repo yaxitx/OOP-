@@ -1,0 +1,5 @@
+
+t
+java:S1450"^Remove the "patientUniqueId" field and declare it as a local variable in the relevant methods.(§Âﬁœ
+I
+java:S1068"3Remove this unused "patientUniqueId" private field.(§Âﬁœ

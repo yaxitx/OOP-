@@ -1,0 +1,15 @@
+
+—
+java:S1186{"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¿Æûó
+O
+java:S1117."9Rename "myObj" which hides the field declared at line 12.(±ï‡Å
+l
+java:S3457:"Q%n should be used in place of \n to produce the platform-specific line separator.(åË£áýÿÿÿÿ
+l
+java:S3457`"Q%n should be used in place of \n to produce the platform-specific line separator.(ñ®™¼ùÿÿÿÿ
+;
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©
+9
+java:S1128"$Remove this unused import 'java.io'.(¬›ãD
+n
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(áüµ6

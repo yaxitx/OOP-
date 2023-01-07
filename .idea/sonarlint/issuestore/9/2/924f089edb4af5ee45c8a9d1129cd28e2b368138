@@ -1,0 +1,11 @@
+
+N
+java:S1854
+"8Remove this useless assignment to local variable "obj1".(²Ø£ñ
+?
+java:S1481
+")Remove this unused "obj1" local variable.(²Ø£ñ
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(óïóÄ8³ŒËµ×0
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8ÒŸÓµ×0
