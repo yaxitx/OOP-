@@ -5,6 +5,9 @@ import com.github.lgooddatepicker.components.TimePickerSettings;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.Format;
 import java.util.Date;
@@ -12,6 +15,10 @@ import javax.swing.JFormattedTextField;
 
 public class PatientGUI {
     public static void main(String[] args) {
+
+        WestminsterSkinConsultationManager newobjx = new WestminsterSkinConsultationManager();
+
+
 
         JLabel headerlable = new JLabel();
 
@@ -77,6 +84,20 @@ public class PatientGUI {
 
         // Create a submit button
         JButton button = new JButton("Submit");
+
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    newobjx.consultf(textField.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText(), textField6.getText(), dobText.getText(), timeArea1.getText(), timeArea2.getText());
+
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+
+            }
+            });
 
         // Add the label, text field, and button to the panel
         panel.add(label);

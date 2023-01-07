@@ -61,7 +61,6 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
 //
 //                System.out.println("\t⌗ Total Number of Doctors Available in the Centre → " + docArr.size());
 //
-//
 //            }
 //        }
         //remove doctor object from arraylist
@@ -76,6 +75,16 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
         } else {
             System.out.println("Invalid index.");
         }
+    }
+
+    public  void consultf(String firstname, String surename, String dob, String mobilnum, String bookeddate, String medicalLicenseNO, String starttime , String endtime , String notes) throws IOException {
+        // Open the file.
+        FileWriter Writer = new FileWriter("src/files/tempfile.txt",true);
+
+        Writer.write(firstname+":"+surename+ ":" +dob+":"+mobilnum+":"+bookeddate+":"+medicalLicenseNO+":"+starttime+":"+endtime+":"+notes) ;
+        Writer.write(System.getProperty("line.separator"));
+        Writer.close();
+
     }
 
 
