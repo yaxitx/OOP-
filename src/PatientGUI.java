@@ -19,20 +19,10 @@ public class PatientGUI {
         WestminsterSkinConsultationManager newobjx = new WestminsterSkinConsultationManager();
 
 
-
-        JLabel headerlable = new JLabel();
-
-        headerlable.setPreferredSize(new Dimension(250, 100));
-        headerlable.setText("Available Doctor List");
-        headerlable.setFont(new Font("Calibri",Font.BOLD,25));
-        headerlable.setVerticalTextPosition(JLabel.TOP);
-        headerlable.setHorizontalAlignment(JLabel.CENTER);
-        headerlable.setForeground(Color.BLACK);
-
         // Create a panel to hold the form elements
         JPanel panelmain = new JPanel();
         JPanel panel = new JPanel();
-        GridLayout gridlaynew = new GridLayout(5,2);
+        GridLayout gridlaynew = new GridLayout(10,1);
         gridlaynew.setHgap(40);
         gridlaynew.setVgap(10);
         panel.setLayout(gridlaynew);
@@ -94,10 +84,11 @@ public class PatientGUI {
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
-
-
             }
-            });
+        });
+
+        // Create a doc list button
+        JButton button1 = new JButton("Doctor List");
 
         // Add the label, text field, and button to the panel
         panel.add(label);
@@ -129,30 +120,16 @@ public class PatientGUI {
 
         panel.add(button);
 
+        panel.add(button1);
+
         // Create a frame to hold the panel
         JFrame frame = new JFrame("Form Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         panelmain.add(panel);
-        GridLayout gridlay = new GridLayout(2,1);
+        GridLayout gridlay = new GridLayout(1,1);
         panelmain.setLayout(gridlay);
         frame.add(panelmain);
         frame.pack();
-
-        JPanel buttonpanel = new JPanel(new FlowLayout(4));
-        panel.add(buttonpanel);
-
-
-        JButton b1=new JButton("Doctor List");
-        b1.setBounds(50,100,95,30);
-        buttonpanel.add(b1);
-
-        JButton b2=new JButton("Consultation Form");
-        b2.setBounds(50,100,95,30);
-        buttonpanel.add(b2);
-
-        JButton b3=new JButton("Patient List");
-        b2.setBounds(50,100,95,30);
-        buttonpanel.add(b3);
 
         frame.setVisible(true);
 

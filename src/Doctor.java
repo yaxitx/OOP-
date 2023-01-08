@@ -1,13 +1,13 @@
 public class Doctor extends Person{
 
-    private int mediLicenceNum ;
+    private String mediLicenceNum ;
     private String specialisation ;
 
-    public int getmediLicenceNum() {
+    public String getmediLicenceNum() {
         return mediLicenceNum;
     }
 
-    public void setmediLicenceNum(int mediLicenceNum){
+    public void setmediLicenceNum(String mediLicenceNum){
         this.mediLicenceNum = mediLicenceNum;
     }
 

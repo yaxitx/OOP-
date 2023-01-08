@@ -28,52 +28,33 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
         myObj.nextLine();
 
         System.out.print("    Enter medical licence number : ");
-        doc.setMobiNum(myObj.nextInt());
-        myObj.nextLine();
+        doc.setmediLicenceNum(myObj.nextLine());
 
         System.out.print("    Enter specialisation : ");
         doc.setspecialisation(myObj.nextLine());
 
         docArr.add(doc);
         System.out.print("No " + docArr.size() + " Doctor added successfully!!");
-        System.out.println(docArr.size());
+        System.out.println();
     }
 
 
     //method to delete a doctor
     public void delDoc() {
-        //create scanner object
-//        Scanner myObj = new Scanner(System.in);
-////
-////    //delete doctor from system
-//        System.out.print("Enter medical licence no to delete : ");
-//        int licNo = myObj.nextInt();
-//
-//        for (int i=0; i < docArr.size(); i++){
-//            System.out.println();
-//
-//            if (docArr.get(i).getmediLicenceNum()==licNo){
-//
-//                System.out.print("| Deleted Doctor Information |");
-//                System.out.printf("\t❍ Doctor Full Name : %s\n\t❍ Doctor DOB : %s\n\t❍ Doctor Contact No : %s\n\t❍ Doctor Specialization : %s\n\t❍ Doctor Medical License No : %s \n\n",
-//                        (docArr.get(i).getName() + " " + docArr.get(i).getSurName()), docArr.get(i).getDob(),
-//                        docArr.get(i).getMobiNum(), docArr.get(i).getspecialisation(), docArr.get(i).getmediLicenceNum());
-//
-//                System.out.println("\t⌗ Total Number of Doctors Available in the Centre → " + docArr.size());
-//
-//            }
-//        }
         //remove doctor object from arraylist
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the index of the element to delete: ");
-        int indexToDelete = scanner.nextInt();
+        Scanner doctorDetails = new Scanner(System.in);
 
-        // check if the index is valid
-        if (indexToDelete >= 0 && indexToDelete < docArr.size()) {
-            docArr.remove(indexToDelete);
-            System.out.println("Element deleted.");
-        } else {
-            System.out.println("Invalid index.");
+        System.out.print("Enter Doctor Medical License No to delete : ");
+        String licNo = doctorDetails.nextLine();
+        System.out.println();
+
+        for (int i = 0; i < docArr.size(); i++) {
+            if (docArr.get(i).getmediLicenceNum().equalsIgnoreCase(licNo)) ;
+            {
+                docArr.remove(i);
+                System.out.println("Deleted doctor from the list");
+            }
+
         }
     }
 
@@ -86,8 +67,6 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
         Writer.close();
 
     }
-
-
 
 
     //method to view doctors
@@ -109,7 +88,7 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
     }
 
 
-        //method to save data
+        //method to save data in text file
         void saveData () {
 
             //sort doctors using surname
@@ -166,4 +145,3 @@ public class WestminsterSkinConsultationManager implements SkinConsultationManag
         }
 
     }
-

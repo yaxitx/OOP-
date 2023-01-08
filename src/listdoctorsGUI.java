@@ -49,17 +49,12 @@ public class listdoctorsGUI {
         JPanel buttonpanel = new JPanel(new FlowLayout(4));
         newpanel.add(buttonpanel);
 
-
-        JButton b1=new JButton("Doctor List");
-        b1.setBounds(50,100,95,30);
-        buttonpanel.add(b1);
-
         JButton b2=new JButton("Consultation Form");
         b2.setBounds(50,100,95,30);
         buttonpanel.add(b2);
 
         JButton b3=new JButton("Patient List");
-        b2.setBounds(50,100,95,30);
+        b3.setBounds(50,100,95,30);
         buttonpanel.add(b3);
 
         frame.setVisible(true);

@@ -27,7 +27,6 @@ public class Main {
                         "\n\t\tA : Add a new doctor " +
                         "\n\t\tD : Delete a doctor " +
                         "\n\t\tP : Print the list of the doctors " +
-                        "\n\t\tO : View Doctor's ordered alphabetically by surname." +
                         "\n\t\tS : Store program data into file "+
                         "\n\t\tQ : Quit the programme" +
                         "\n\nEnter the letter to choose the option : ");

@@ -57,6 +57,7 @@ public class PatientTableGUI {
         Jtable.setFont(new Font("Calibri", Font.BOLD, 10));
         frame.add(new JScrollPane(Jtable));
 
+
         frame.setVisible(true);
         }
 
