@@ -10,13 +10,19 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFormattedTextField;
 
 public class PatientGUI {
-    public static void main(String[] args) {
 
-        WestminsterSkinConsultationManager newobjx = new WestminsterSkinConsultationManager();
+    PatientGUI(){
+        WestminsterSkinConsultationManager object1 = new WestminsterSkinConsultationManager();
+
+        // Create a frame to hold the panel
+        JFrame frame = new JFrame("Form Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
         // Create a panel to hold the form elements
@@ -76,14 +82,46 @@ public class PatientGUI {
         JButton button = new JButton("Submit");
 
         button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent q) {
 
+
+                //printing consultation charge
+                SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+
+                int costfinal = 0;
                 try {
-                    newobjx.consultf(textField.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText(), textField6.getText(), dobText.getText(), timeArea1.getText(), timeArea2.getText());
+                    Date finaltime = timeFormat.parse(String.valueOf(timeArea2));
+                    Date firsttime = timeFormat.parse(String.valueOf(timeArea1));
 
-                } catch (IOException ex) {
+
+                    int timefianl = (int) ((finaltime.getTime() - firsttime.getTime())/  (1000 * (60 * 60)));
+
+                    if (timefianl == 1){
+                        costfinal = timefianl * 15;
+
+                    }
+                    else {
+                        costfinal += ((timefianl- 1) * 25 )+15;
+                    }
+
+
+                } catch (ParseException ex) {
                     throw new RuntimeException(ex);
                 }
+
+                JOptionPane.showMessageDialog(frame , "$" + costfinal + " Cost's you!");
+
+
+
+                try {
+                    object1.consultf(textField.getText(), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText(), textField6.getText(), dobText.getText(), timeArea1.getText(), timeArea2.getText());
+
+                } catch (IOException j) {
+                    throw new RuntimeException(j);
+                }
+                frame.setVisible(false);
+                new PatientTableGUI();
+
             }
         });
 
@@ -122,9 +160,7 @@ public class PatientGUI {
 
         panel.add(button1);
 
-        // Create a frame to hold the panel
-        JFrame frame = new JFrame("Form Example");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         panelmain.add(panel);
         GridLayout gridlay = new GridLayout(1,1);
         panelmain.setLayout(gridlay);
@@ -133,7 +169,20 @@ public class PatientGUI {
 
         frame.setVisible(true);
 
-        JTextField Jtext = new JTextField("From Example");
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                new listdoctorsGUI();
+
+            }
+        });
+
+    }
+    public static void main(String[] args) {
+
+
 //        Jtext.setSize();
     }
 }
